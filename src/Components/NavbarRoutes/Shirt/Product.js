@@ -32,7 +32,7 @@ class Product extends Component {
               disabled={inCart ? true : false}
               onClick={() => {
                 this.props.addToCart(id);
-                this.props.openModal(id);
+                this.props.openModal(id)
               }}
             >
               {inCart ? (
@@ -67,8 +67,12 @@ class Product extends Component {
     );
   }
 }
-
-export default connect(null, { handleDetail, addToCart, openModal })(Product);
+const mapStateToProps = (state) => ({
+  basketProps: state.basketState,
+});
+export default connect(mapStateToProps, { handleDetail, addToCart, openModal })(
+  Product
+);
 
 Product.propTypes = {
   product: PropTypes.shape({

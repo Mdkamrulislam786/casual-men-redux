@@ -29,7 +29,7 @@ export default (state = initialState, action) => {
     const product = state.products.find((item) => item.id === id); //returns item that meets the condition
     return product;
   };
-  //remove
+  //removes the item in cart
   let removeItem = (id) => {
     let tempProducts = [...state.products];
     let tempCartRmv = [...state.cart];

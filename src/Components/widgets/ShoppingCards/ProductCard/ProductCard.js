@@ -141,7 +141,6 @@ class ProductCard extends Component {
                   onClick={() => {
                     this.props.addToCart(id);
                   }}
-                  // onClick={() => props.addBasket(props.add)}
                 />
                 <Buttons linkTo="/shirts" cta="Back To Products" />
               </div>

@@ -1,20 +1,19 @@
 import React, { Component } from "react";
 import { Modal, Image } from "react-bootstrap";
-import { ProductConsumer } from "../../../context";
 import Buttons from "../Buttons/button";
 import { connect } from "react-redux";
 import { openModal, closeModal } from "../../../actions/addAction";
 
 class ModalButton extends Component {
   render() {
-    const { modalOpen,open } = this.props.basketProps;
+    const { modalOpen, open } = this.props.basketProps;
     const { id, img, title, price } = this.props.basketProps.modalProduct;
     const modal = () => {
       if (!modalOpen) {
         return null;
       } else {
         return (
-          <Modal show={true} size="sm" centered>
+          <Modal show={open} size="sm" centered>
             <Modal.Header>
               <Modal.Title>
                 <h6>Item Added To The Cart</h6>
