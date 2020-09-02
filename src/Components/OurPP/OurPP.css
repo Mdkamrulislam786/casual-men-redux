@@ -1,0 +1,17 @@
+.OurPP {
+    max-width: 100%;
+    margin-bottom: 5rem;
+}
+
+@media (min-width:320px) and (max-width:475px){
+    .OurPP h2{
+        font-size: 24px;
+    }
+}
+
+
+/* height: 25px;
+width: 25px;
+background-color: #bbb;
+border-radius: 50%;
+display: inline-block; */

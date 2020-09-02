@@ -1,0 +1,78 @@
+.jumbotron {
+    background-color: inherit !important;
+    padding: 0 !important;
+
+}
+
+.jumbo {
+    background-size: cover;
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 3;
+    box-sizing: border-box;
+    max-width: 100%;
+    object-fit: contain;
+    height: 86vh;
+
+}
+
+.jumboImg1 {
+    background-image: url(../../../assets/casual-accessories.jpg);
+
+}
+
+.jumboImg2 {
+    background-image: url(../../../assets/fashion-likbez-how-to-create-various-effects-on-the-jeans-1.jpg);
+
+}
+
+.jumbo h1 {
+    font-size: 5rem;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.jumbotron>p {
+    font-size: 24px;
+    font-weight: 400;
+    color: #ffffff;
+
+}
+
+#overlay {
+    position: absolute;
+    /* Sit on top of the page content */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    /* Specify a stack order in case you're using a different order for other elements */
+}
+
+@media (min-width:320px)and (max-width:767px) {
+    .jumbo h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #ffffff;
+    }
+
+    .jumbotron>p {
+        font-size: 18px;
+        font-weight: 400;
+        color: #ffffff;
+    }
+}
+
+@media (min-width:768px)and (max-width:1024px) {
+    .jumbo h1 {
+        font-size: 3rem;
+    }
+
+    .jumbotron>p {
+        font-size: 18px;
+    }
+}

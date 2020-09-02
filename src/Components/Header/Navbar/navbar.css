@@ -1,0 +1,18 @@
+.navp{
+    background-color: rgb(231, 185, 31);
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .navbar{
+    background-color: #000000 !important;
+  }
+  .nav-item{
+    color: #ffffff !important;
+  }
+  .nd-nav{
+    widows: 100vw;
+  }
+  a{
+    text-decoration: none;
+  }

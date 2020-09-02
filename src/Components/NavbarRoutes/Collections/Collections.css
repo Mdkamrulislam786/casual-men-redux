@@ -1,0 +1,20 @@
+.Collections{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.Collections a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.Collections a:hover{
+    border-bottom: 3px solid #000;
+}
+.Collections a:focus{
+    color: #000;
+    background-color: rgb(231, 185, 31);
+    border-bottom: 3px solid #000;
+    transform: all .7s ease-in-out;
+}
+

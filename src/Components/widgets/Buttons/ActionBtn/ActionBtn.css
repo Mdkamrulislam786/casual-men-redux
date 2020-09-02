@@ -1,0 +1,59 @@
+.ActionBtn{
+    position: relative;
+    margin: 5px 0px;
+    z-index: 2;
+    width: 50%;
+}
+.buttonp{
+    color: #fff;
+    font-size: 16px;
+    padding: 3px;
+    font-weight:500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 0;
+}
+.ActionBtn::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgb(2, 60, 94) ;
+    border: 2px solid #000;
+    border-radius: 5px;
+    z-index: -1;
+    transition: transform 0.5s ;
+    transform-origin: bottom right;
+    transform: scale(0);
+}
+.ActionBtn:hover::before{
+    transform: transform 0.5s;
+    transform-origin: top left;
+    transform: scale(1);
+}
+
+.ActionBtn::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #000000;
+    border: 2px solid rgb(231, 185, 31);;
+    border-radius: 5px;
+    box-sizing: border-box;
+    z-index: -1;
+    transition: transform 0.5s ;
+    transform-origin: top left;
+    transform: scale(1);
+}
+.ActionBtn:hover::after{
+    transition: transform 0.5s;
+    transform-origin: bottom right;
+    transform: scale(0);
+}
+

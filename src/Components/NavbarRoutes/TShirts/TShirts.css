@@ -1,0 +1,9 @@
+.MainCatagory{
+    margin: 3rem 0rem;
+}
+
+@media (min-width:320px) and (max-width:1023px){
+    .MainCatagory h2{
+        font-size: 24px;
+    }
+}
