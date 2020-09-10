@@ -7,6 +7,7 @@ import {
   CLEAR_CART,
   MODAL_OPEN,
   MODAL_CLOSE,
+  GET_NUMBERS,
 } from "./types";
 
 export const addToCart = (id) => {
@@ -77,6 +78,13 @@ export const closeModal = (id) => {
     dispatch({
       type: MODAL_CLOSE,
       payload: id,
+    });
+  };
+};
+export const getNumbers = () => {
+  return (dispatch) => {
+    dispatch({
+      type: GET_NUMBERS,
     });
   };
 };

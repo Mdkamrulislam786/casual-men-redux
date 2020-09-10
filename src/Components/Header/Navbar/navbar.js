@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Nav,
@@ -10,6 +10,9 @@ import {
   Carousel,
 } from "react-bootstrap";
 import "./navbar.css";
+//REDUX
+import { connect } from "react-redux";
+import { getNumbers } from "../../../actions/addAction";
 
 const logo = () => (
   <span style={{ fontSize: "24px", color: "#fff" }}>
@@ -17,7 +20,10 @@ const logo = () => (
   </span>
 );
 
-const CMNavbar = () => {
+const CMNavbar = (props) => {
+  useEffect(() => {
+    return getNumbers();
+  }, []);
   return (
     <div className="CMnavbar">
       <Navbar collapseOnSelect expand="xl" variant="dark">
@@ -96,6 +102,7 @@ const CMNavbar = () => {
               eventKey={2}
             >
               <span style={{ color: "white" }}>
+                <span>{props.basketProps.basketNumbers} </span>
                 <i className="fas fa-shopping-cart">CART</i>
               </span>
             </Nav.Link>
@@ -122,4 +129,7 @@ const CMNavbar = () => {
   );
 };
 
-export default CMNavbar;
+const mapStateToProps = (state) => ({
+  basketProps: state.basketState,
+});
+export default connect(mapStateToProps, { getNumbers })(CMNavbar);

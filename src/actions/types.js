@@ -6,3 +6,4 @@ export const CLEAR_PRODUCT = "CLEAR_PRODUCT";
 export const CLEAR_CART = " CLEAR_CART";
 export const MODAL_OPEN = "MODAL_OPEN";
 export const MODAL_CLOSE = "MODAL_CLOSE";
+export const GET_NUMBERS = "GET_NUMBERS";

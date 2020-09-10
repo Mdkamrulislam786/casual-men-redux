@@ -8,10 +8,12 @@ import {
   CLEAR_CART,
   MODAL_OPEN,
   MODAL_CLOSE,
+  GET_NUMBERS,
 } from "../actions/types";
 
 const initialState = {
   products: [...storeProducts],
+  basketNumbers: 0,
   detailProduct,
   cart: [],
   modalOpen: false,
@@ -39,11 +41,13 @@ export default (state = initialState, action) => {
 
     const index = tempProducts.indexOf(getItem(id));
     let removeProduct = tempProducts[index];
+    let bakupNumbers = removeProduct.count;
     removeProduct.inCart = false;
     removeProduct.count = 0;
     removeProduct.total = 0;
     return {
       ...state,
+      basketNumbers: state.basketNumbers - bakupNumbers,
       cart: [...tempCartRmv],
       products: [...tempProducts],
     };
@@ -66,6 +70,7 @@ export default (state = initialState, action) => {
       product.total = price;
       return {
         ...state,
+        basketNumbers: state.basketNumbers + 1,
         products: tempProducts,
         cart: [...state.cart, product],
       };
@@ -78,6 +83,7 @@ export default (state = initialState, action) => {
       productInc.total = productInc.count * productInc.price;
       return {
         ...state,
+        basketNumbers: state.basketNumbers + 1,
         cart: [...tempCart],
         cartTotal: productInc.total,
       };
@@ -90,15 +96,18 @@ export default (state = initialState, action) => {
       const indexDecrease = tempCartDecrese.indexOf(selectedProductDecrease);
       const productDecrease = tempCartDecrese[indexDecrease];
       productDecrease.count = productDecrease.count - 1;
-
+      let newBasketNumbers = 0;
       if (productDecrease.count === 0) {
+        newBasketNumbers = state.basketNumbers;
         return removeItem(id);
       } else {
         productDecrease.total = productDecrease.count * productDecrease.price;
+        newBasketNumbers = state.basketNumbers - 1;
       }
 
       return {
         ...state,
+        basketNumbers: newBasketNumbers,
         cart: [...tempCartDecrese],
         cartTotal: productDecrease.total,
       };
@@ -108,6 +117,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         cart: [],
+        basketNumbers: 0,
       };
     case MODAL_OPEN:
       const productModal = getItem(id);
@@ -120,6 +130,10 @@ export default (state = initialState, action) => {
       return {
         ...state,
         modalOpen: false,
+      };
+    case GET_NUMBERS:
+      return {
+        ...state,
       };
     default:
       return state;
